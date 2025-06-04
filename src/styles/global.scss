@@ -1,0 +1,242 @@
+:root {
+  --main-font: sans-serif;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+body.lang-en {
+  --main-font: 'Poppins', sans-serif;
+}
+
+body.lang-vi {
+  --main-font: 'Be Vietnam Pro', sans-serif;
+}
+
+* {
+  font-family: var(--main-font, sans-serif); // fallback là sans-serif
+}
+
+body.light-mode {
+  background: linear-gradient(90deg, #e2e2e2, #c9d6ff);
+  color: #000;
+
+  .nav {
+    background: linear-gradient(135deg, #B0E0E6, #2E8B57);
+
+    .linkPage a:hover {
+      animation: glowEffect-light 0.3s ease-in-out;
+    }
+  }
+
+  .user-menu .dropdown li a {
+    color: #000;
+  }
+
+  .social {
+    .link-fb {
+      color: #4267B2;
+    }
+
+    .link-twit {
+      color: #1DA1F2;
+    }
+
+    .link-ig {
+      color: #E1306C;
+    }
+
+    .link-gg {
+      color: #DB4437;
+    }
+  }
+}
+
+body.dark-mode {
+  background: linear-gradient(90deg, #313131, #2B3A5A);
+  color: #fff;
+
+  .nav {
+    background: linear-gradient(135deg, #0F4146, #2D8857);
+
+    .linkPage a:hover {
+      color: #9FBFAA;
+      background: linear-gradient(135deg, #0F4146, #2D8857);
+      animation: glowEffect-dark 0.3s ease-in-out;
+    }
+
+    ul li a.active {
+      background: linear-gradient(135deg, #0F4146, #2D8857);
+    }
+  }
+
+  .login-register-container {
+    .form-box {
+      background: #121212;
+
+      h1 {
+        color: #DFDFDF;
+      }
+
+      .input-box input,
+      .input-box .forgot-link {
+        color: #77777A;
+        background: #282828;
+      }
+
+      .btn {
+        background: #1C604D;
+      }
+
+      p {
+        color: #DFDFDF;
+      }
+
+      .social-icons {
+        a {
+          color: #DFDFDF;
+          border: 2px solid #787878;
+        }
+      }
+    }
+
+    .toggle-box {
+      background-color: #121212;
+      overflow: hidden;
+    }
+
+    .toggle-box::before {
+      background: #1C604D;
+    }
+  }
+
+  .user-menu {
+    .dropdown {
+      background-color: #1e1e1e;
+
+      li:hover {
+        background: #262626;
+      }
+    }
+  }
+
+  .language-selector {
+    .lang-dropdown {
+      background: #1e1e1e;
+    }
+  }
+
+  .profile-container {
+    background-color: #121212;
+
+    h2 {
+      color: #99CCBD;
+    }
+
+    .right-panel input,
+    .right-panel textarea {
+      color: #fff;
+      background: #3B3B3B;
+      border-color: #787878;
+    }
+
+    .btn {
+      border: solid #5A786F 2px;
+    }
+
+    .btn:hover {
+      background: #121212;
+      color: #5A786F;
+      box-shadow: 0 0 16px rgba(46, 139, 87, 0.8);
+    }
+
+    .social {
+      .link-fb {
+        i {
+          color: #4267B2;
+        }
+
+        span {
+          color: #82A0F1;
+        }
+      }
+
+      .link-twit {
+        i {
+          color: #1DA1F2;
+        }
+
+        span {
+          color: #0079C6;
+        }
+      }
+
+      .link-ig {
+        i {
+          color: #E1306C;
+        }
+
+        span {
+          color: #F6487D;
+        }
+      }
+
+      .link-gg {
+        i {
+          color: #DB4437;
+        }
+
+        span {
+          color: #EE5645;
+
+        }
+      }
+    }
+  }
+
+  .sidebar-links {
+    a {
+      color: #BAC5FF;
+    }
+  }
+}
+
+/* Hiệu ứng ánh sáng (Glow) khi hover cho navbar */
+@keyframes glowEffect-light {
+  0% {
+    box-shadow: 0 0 8px #B0E0E6, 0 0 15px #2E8B57;
+    /* Ánh sáng nhẹ từ gradient */
+  }
+
+  50% {
+    box-shadow: 0 0 12px #B0E0E6, 0 0 20px #2E8B57;
+  }
+
+  100% {
+    box-shadow: 0 0 8px #B0E0E6, 0 0 15px #2E8B57;
+  }
+}
+
+@keyframes glowEffect-dark {
+  0% {
+    box-shadow: 0 0 8px #0F4146, 0 0 15px #2E8B57;
+    /* Ánh sáng nhẹ từ gradient */
+  }
+
+  50% {
+    box-shadow: 0 0 12px #0F4146, 0 0 20px #2E8B57;
+  }
+
+  100% {
+    box-shadow: 0 0 8px #0F4146, 0 0 15px #2E8B57;
+  }
+}
