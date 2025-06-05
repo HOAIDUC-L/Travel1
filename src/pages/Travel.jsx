@@ -28,47 +28,81 @@ const tourData = [
     name: "Du lịch sinh thái-Hà Nội",
     description: "Hà Nội, thủ đô của Việt Nam, nổi tiếng với kiến trúc trăm tuổi...",
     img: hanoiImg,
-    price: "3.500.000₫"
+    price: "3.500.000₫",
+    suggestions: [
+      "CMND/CCCD hoặc hộ chiếu",
+      "Quần áo phù hợp thời tiết miền Bắc (nên xem dự báo thời tiết)",
+      "Ô/dù nhỏ tiện lợi",
+      "Tiền mặt/thẻ ngân hàng",
+      "Đồ dùng cá nhân",
+      "Thuốc cảm cúm, dị ứng",
+      "Máy ảnh hoặc điện thoại chụp hình"
+    ]
   },
   {
     id: 2,
     name: "Tour Đà Nẵng",
     description: "Đà Nẵng là thành phố lớn nhất của miền Trung...",
     img: danangImg,
-    price: "4.200.000₫"
+    price: "4.200.000₫",
+    suggestions: [
+      "Kem chống nắng",
+      "Kính râm/nón rộng vành",
+      "Áo bơi và đồ bơi nếu đi biển",
+      "CMND/CCCD hoặc hộ chiếu",
+      "Giày dép đi biển/sandals",
+      "Đồ dùng cá nhân",
+      "Máy ảnh, sạc dự phòng"
+    ]
   },
   {
     id: 3,
     name: "Tham quan Hội An",
     description: "Phố cổ Hội An từng là một thương cảng quốc tế sầm uất...",
     img: hoianImg,
-    price: "3.900.000₫"
+    price: "3.900.000₫",
+    suggestions: [
+      "CMND/CCCD hoặc hộ chiếu",
+      "Quần áo nhẹ, thoáng mát",
+      "Giày thể thao hoặc giày sandal thoải mái",
+      "Đèn pin mini (khám phá phố cổ buổi tối)",
+      "Máy ảnh/điện thoại chụp hình",
+      "Tiền mặt/thẻ ngân hàng",
+      "Thuốc chống côn trùng"
+    ]
   },
   {
     id: 4,
     name: "Trải nghiệm du lịch Lạng Sơn",
     description: "Lạng Sơn là một tỉnh miền núi phía Bắc Việt Nam, nổi tiếng với cảnh quan thiên nhiên hùng vĩ...",
     img: nhatrangImg,
-    price: "5.100.000₫"
+    price: "5.100.000₫",
+    suggestions: [
+      "CMND/CCCD hoặc hộ chiếu",
+      "Áo khoác nhẹ hoặc áo gió (nhiệt độ có thể chênh lệch lớn vào sáng/tối)",
+      "Giày leo núi hoặc giày thể thao",
+      "Đồ dùng cá nhân",
+      "Thuốc men cơ bản, dầu gió",
+      "Bình nước cá nhân",
+      "Máy ảnh, ống nhòm (nếu đi ngắm cảnh)"
+    ]
   },
   {
     id: 5,
     name: "Chuyến đi Vũng Tàu",
     description: "Vũng Tàu là một thành phố biển nổi tiếng với bãi biển đẹp và các hoạt động giải trí đa dạng...",
     img: phuquocImg,
-    price: "5.600.000₫"
+    price: "5.600.000₫",
+    suggestions: [
+      "CMND/CCCD hoặc hộ chiếu",
+      "Đồ bơi, kính bơi",
+      "Kem chống nắng",
+      "Mũ rộng vành, kính râm",
+      "Dép tông hoặc sandals đi biển",
+      "Đồ dùng cá nhân",
+      "Máy ảnh, GoPro"
+    ]
   }
-];
-
-const suggestions = [
-  "CMND/CCCD hoặc hộ chiếu",
-  "Vé máy bay/tàu/xe",
-  "Tiền mặt/thẻ ngân hàng",
-  "Quần áo phù hợp điểm đến",
-  "Đồ dùng cá nhân ",
-  "Thuốc men cá nhân",
-  "Áo mưa hoặc ô",
-  "Máy ảnh (nếu cần)",
 ];
 
 function Modal({ show, onClose, children }) {
@@ -94,10 +128,39 @@ function Travel() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Validate all fields
     if (form.location === "0") {
       setModalContent(<p style={{ color: "red" }}>Hãy chọn địa điểm bạn muốn đi!</p>);
       return;
     }
+    if (!form.people || Number(form.people) < 1) {
+      setModalContent(<p style={{ color: "red" }}>Hãy nhập số người hợp lệ!</p>);
+      return;
+    }
+    if (!form.start) {
+      setModalContent(<p style={{ color: "red" }}>Hãy chọn ngày đi!</p>);
+      return;
+    }
+    if (!form.end) {
+      setModalContent(<p style={{ color: "red" }}>Hãy chọn ngày về!</p>);
+      return;
+    }
+    // Validate ngày đi phải từ hôm nay trở đi, ngày về phải sau ngày đi
+    const now = new Date();
+    now.setHours(0, 0, 0, 0); // set to 0h for accurate comparison
+    const startDate = new Date(form.start);
+    const endDate = new Date(form.end);
+
+    if (startDate < now) {
+      setModalContent(<p style={{ color: "red" }}>Ngày đi phải từ hôm nay trở đi!</p>);
+      return;
+    }
+
+    if (endDate <= startDate) {
+      setModalContent(<p style={{ color: "red" }}>Ngày về phải sau ngày đi!</p>);
+      return;
+    }
+
     const tour = tourData.find(t => t.id === Number(form.location));
     if (tour) {
       setModalContent(
@@ -115,7 +178,7 @@ function Travel() {
           <div style={{ textAlign: "left" }}>
             <h3 style={{ color: "#0def3a" }}>Gợi ý đồ cần chuẩn bị:</h3>
             <ul style={{ paddingLeft: 18, lineHeight: 1.7, fontSize: 15 }}>
-              {suggestions.map((item, idx) => <li key={idx}>✔️ {item}</li>)}
+              {tour.suggestions.map((item, idx) => <li key={idx}>✔️ {item}</li>)}
             </ul>
           </div>
         </div>
@@ -348,7 +411,6 @@ function Travel() {
           </div>
         </div>
       </section>
-
 
       <Modal show={!!modalContent} onClose={handleCloseModal}>
         {modalContent}
