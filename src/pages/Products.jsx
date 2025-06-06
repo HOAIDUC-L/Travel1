@@ -10,70 +10,70 @@ const PRODUCTS = [
     name: 'Kính thời trang',
     price: 45900,
     colors: ['Đen', 'Xám', 'Nâu'],
-    image: require('../assets/images/products/product1.webp')
+    image: require('../assets/images/products/product1.png')
   },
   {
     id: 2,
     name: 'Bình nước inox',
     price: 150000,
     colors: ['Navy', 'Đen', 'Đỏ'],
-    image: require('../assets/images/products/product2.webp')
+    image: require('../assets/images/products/product2.png')
   },
   {
     id: 3,
     name: 'Giỏ dã ngoại',
     price: 250000,
     colors: ['Hồng', 'Vàng', 'Xanh lá'],
-    image: require('../assets/images/products/product3.webp')
+    image: require('../assets/images/products/product3.png')
   },
   {
     id: 4,
     name: 'Kem chống nắng',
     price: 120000,
     colors: ['Xanh lá', 'Hồng', 'Xanh'],
-    image: require('../assets/images/products/product4.webp')
+    image: require('../assets/images/products/product4.png')
   },
   {
     id: 5,
     name: 'Khăn tắm sợi tre',
     price: 80000,
     colors: ['Xanh', 'Cam', 'Hồng'],
-    image: require('../assets/images/products/product5.webp')
+    image: require('../assets/images/products/product5.png')
   },
   {
     id: 6,
     name: 'Túi đan thủ công',
     price: 100000,
     colors: ['Đỏ', 'Be', 'Kaki'],
-    image: require('../assets/images/products/product6.webp')
+    image: require('../assets/images/products/product6.png')
   },
   {
     id: 7,
     name: 'Thảm picnic',
     price: 200000,
     colors: ['Vàng', 'Hồng', 'Xanh'],
-    image: require('../assets/images/products/product7.webp')
+    image: require('../assets/images/products/product7.png')
   },
   {
     id: 8,
     name: 'Đèn pin năng lượng mặt trời',
     price: 250000,
     colors: ['Xanh lá', 'Đen', 'Vàng'],
-    image: require('../assets/images/products/product8.webp')
+    image: require('../assets/images/products/product8.png')
   },
   {
     id: 9,
     name: 'Balo du lịch',
     price: 500000,
     colors: ['Đen', 'Xanh', 'Xám'],
-    image: require('../assets/images/products/product9.webp')
+    image: require('../assets/images/products/product9.png')
   },
   {
     id: 10,
     name: 'Nón du lịch',
     price: 50000,
     colors: ['Be', 'Trắng', 'Cà phê'],
-    image: require('../assets/images/products/product10.webp')
+    image: require('../assets/images/products/product10.png')
   },
 ];
 

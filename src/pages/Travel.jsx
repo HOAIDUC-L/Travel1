@@ -108,8 +108,8 @@ const tourData = [
 function Modal({ show, onClose, children }) {
   if (!show) return null;
   return (
-    <div className="modal" style={{ display: "block" }} onClick={e => e.target.className === "modal" && onClose()}>
-      <div className="modal-content">
+    <div className="modal-travel" style={{ display: "block" }} onClick={e => e.target.className === "modal-travel" && onClose()}>
+      <div className="modal-travel-content">
         <span className="close-btn" onClick={onClose}>&times;</span>
         <div id="modalBody">{children}</div>
       </div>

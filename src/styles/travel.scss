@@ -527,7 +527,7 @@ header {
 }
 
 /* Modal styles */
-.modal {
+.modal-travel {
   display: none;
   position: fixed;
   z-index: 999;
@@ -544,7 +544,7 @@ header {
   }
 }
 
-.modal-content {
+.modal-travel-content {
   background: rgba(255, 255, 255, 0.94);
   margin: auto;
   padding: 28px 20px 20px 20px;
