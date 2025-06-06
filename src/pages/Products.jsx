@@ -17,42 +17,42 @@ const PRODUCTS = [
     name: 'Bình nước inox',
     price: 150000,
     colors: ['Navy', 'Đen', 'Đỏ'],
-    image:  require('../assets/images/products/product2.webp')
+    image: require('../assets/images/products/product2.webp')
   },
   {
     id: 3,
     name: 'Giỏ dã ngoại',
     price: 250000,
     colors: ['Hồng', 'Vàng', 'Xanh lá'],
-    image:  require('../assets/images/products/product3.webp')
+    image: require('../assets/images/products/product3.webp')
   },
   {
     id: 4,
     name: 'Kem chống nắng',
     price: 120000,
     colors: ['Xanh lá', 'Hồng', 'Xanh'],
-    image:  require('../assets/images/products/product4.webp')
+    image: require('../assets/images/products/product4.webp')
   },
   {
     id: 5,
     name: 'Khăn tắm sợi tre',
     price: 80000,
     colors: ['Xanh', 'Cam', 'Hồng'],
-    image:  require('../assets/images/products/product5.webp')
+    image: require('../assets/images/products/product5.webp')
   },
   {
     id: 6,
     name: 'Túi đan thủ công',
     price: 100000,
     colors: ['Đỏ', 'Be', 'Kaki'],
-    image:  require('../assets/images/products/product6.webp')
+    image: require('../assets/images/products/product6.webp')
   },
   {
     id: 7,
     name: 'Thảm picnic',
     price: 200000,
     colors: ['Vàng', 'Hồng', 'Xanh'],
-    image:  require('../assets/images/products/product7.webp')
+    image: require('../assets/images/products/product7.webp')
   },
   {
     id: 8,
@@ -163,7 +163,7 @@ const Products = () => {
             <span className="close-button" onClick={() => setModalProduct(null)}>&times;</span>
             <h2>Mua Ngay</h2>
             <p id="current-price">Giá: {modalProduct.price.toLocaleString('vi-VN')} VND</p>
-            <form onSubmit={handleFormSubmit} id="buy-now-form">
+            <form onSubmit={handleFormSubmit} className="buy-now-form">
               <label>Chọn Màu:</label>
               <select
                 value={formData.color}

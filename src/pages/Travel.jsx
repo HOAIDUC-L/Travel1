@@ -198,7 +198,7 @@ function Travel() {
         <div className="header-content">
           <h1>Khám phá</h1>
           <p>Xách ba lô lên và đi nào</p>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="travel-form">
             <h1>Bạn muốn đi đâu ?</h1>
             <p>Địa điểm</p>
             <select name="location" value={form.location} onChange={handleChange}>
