@@ -348,14 +348,14 @@
    color: black;
  }
 
- .buy-now-form label {
+ .bu-form label {
    display: block;
    margin: 10px 0 5px;
  }
 
- .buy-now-form input,
- .buy-now-form select,
- .buy-now-form button {
+ .buy-form input,
+ .buy-form select,
+ .buy-form button {
    width: 100%;
    padding: 10px;
    margin-bottom: 15px;
@@ -363,12 +363,12 @@
    border-radius: 5px;
  }
 
- .buy-now-form button {
+ .buy-form button {
    background-color: #28a745;
    color: white;
    cursor: pointer;
  }
 
- .buy-now-form button:hover {
+ .buy-form button:hover {
    background-color: #218838;
  }

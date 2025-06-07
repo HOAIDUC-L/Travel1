@@ -163,7 +163,7 @@ const Products = () => {
             <span className="close-button" onClick={() => setModalProduct(null)}>&times;</span>
             <h2>Mua Ngay</h2>
             <p id="current-price">Giá: {modalProduct.price.toLocaleString('vi-VN')} VND</p>
-            <form onSubmit={handleFormSubmit} className="buy-now-form">
+            <form onSubmit={handleFormSubmit} className="buy-form">
               <label>Chọn Màu:</label>
               <select
                 value={formData.color}
